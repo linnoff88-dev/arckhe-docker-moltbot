@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="assets/moltbot-migration.jpg" alt="ClawdBot â†’ MoltBot" width="100%">
 </p>
 
@@ -67,19 +67,19 @@ Setup Docker para o [Moltbot](https://molt.bot) â€” um assistente pessoal d
 
 **Linux / Mac:**
 ```bash
-git clone https://github.com/inematds/docker-moltbot.git
+git clone https://github.com/linnoff88-dev/docker-moltbot.git
 cd docker-moltbot
 ```
 
 **Windows (CMD):**
 ```cmd
-git clone https://github.com/inematds/docker-moltbot.git
+git clone https://github.com/linnoff88-dev/docker-moltbot.git
 cd docker-moltbot
 ```
 
 **Windows (PowerShell):**
 ```powershell
-git clone https://github.com/inematds/docker-moltbot.git
+git clone https://github.com/linnoff88-dev/docker-moltbot.git
 cd docker-moltbot
 ```
 
@@ -547,12 +547,12 @@ Turbine seu Moltbot com estas ferramentas adicionais:
 
 | Skill | InstalaÃ§Ã£o | Finalidade |
 |-------|------------|------------|
-| [Remotion Skills](https://github.com/inematds/remotion-skills) | Copiar para `.codex/skills/` | Criar vÃ­deos programaticamente com React |
+| [Remotion Skills](https://github.com/linnoff88-dev/remotion-skills) | Copiar para `.codex/skills/` | Criar vÃ­deos programaticamente com React |
 
 ```bash
 # Instalar Remotion Skills para Codex
 docker exec moltbot bash -c '
-  git clone https://github.com/inematds/remotion-skills.git /tmp/remotion-skills
+  git clone https://github.com/linnoff88-dev/remotion-skills.git /tmp/remotion-skills
   mkdir -p .codex/skills
   cp -r /tmp/remotion-skills/skills/remotion .codex/skills/
 '
@@ -684,7 +684,7 @@ Se vocÃª estÃ¡ atualizando do setup antigo `docker-clawdbot`, aqui estÃ¡ o
 | Pacote: `clawdbot` (npm) | Pacote: `moltbot` (npm) |
 | CLI: `clawdbot` | CLI: `moltbot` |
 | Comando: `clawdbot gateway start --foreground` | Comando: `moltbot gateway run` |
-| Repo: `inematds/docker-clawdbot` | Repo: `inematds/docker-moltbot` |
+| Repo: `linnoff88-dev/docker-clawdbot` | Repo: `linnoff88-dev/docker-moltbot` |
 | Docs: `docs.clawd.bot` | Docs: `docs.molt.bot` (redirects funcionam) |
 | Dir de config: `~/.clawdbot` | Dir de config: `~/.moltbot` (com fallback para `~/.clawdbot`) |
 | UsuÃ¡rio: `clawdbot` | UsuÃ¡rio: `moltbot` |
@@ -708,7 +708,7 @@ Se vocÃª estÃ¡ atualizando do setup antigo `docker-clawdbot`, aqui estÃ¡ o
 
 3. **Clone o novo repo:**
    ```bash
-   git clone https://github.com/inematds/docker-moltbot.git
+   git clone https://github.com/linnoff88-dev/docker-moltbot.git
    cd docker-moltbot
    ```
 
