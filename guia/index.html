@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Docker Moltbot — assistente de IA pessoal, seguro por padrão</title>
+<title>Docker Moltbot — assistente de IA pessoal, seguro por padrêo</title>
 <meta name="description" content="Setup Docker pronto e reforçado em segurança para rodar o Moltbot, assistente de IA pessoal multi-canal (Telegram, WhatsApp, Discord, webchat).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,19 +129,19 @@
 
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
-  <h2>Um Moltbot pronto pra produção, sem gambiarra de segurança</h2>
-  <p class="sub">O Moltbot (antigo Clawdbot) é um assistente de IA que roda na sua própria máquina, conversa por vários canais e tem acesso a ferramentas reais (shell, busca web, navegador, execução de código). Este repo empacota tudo isso num Docker já hardened, com um comando pra subir.</p>
+  <h2>Um Moltbot pronto pra produçêo, sem gambiarra de segurança</h2>
+  <p class="sub">O Moltbot (antigo Clawdbot) é um assistente de IA que roda na sua própria máquina, conversa por vários canais e tem acesso a ferramentas reais (shell, busca web, navegador, execuçêo de código). Este repo empacota tudo isso num Docker já hardened, com um comando pra subir.</p>
   <div class="grid g3">
-    <div class="card"><h3>🔒 Segurança de fábrica</h3><p>Usuário não-root, gateway vinculado só ao loopback, autenticação por pareamento, secrets via variáveis de ambiente, permissões 600 no config. Segue o Checklist Top 10 do próprio Moltbot.</p></div>
+    <div class="card"><h3>🔒 Segurança de fábrica</h3><p>Usuário nêo-root, gateway vinculado só ao loopback, autenticaçêo por pareamento, secrets via variáveis de ambiente, permissões 600 no config. Segue o Checklist Top 10 do próprio Moltbot.</p></div>
     <div class="card"><h3>📱 Multi-canal</h3><p>Telegram, WhatsApp (QR code), Discord, Slack e webchat — todos compartilham o mesmo agente e podem ser habilitados ao mesmo tempo.</p></div>
-    <div class="card"><h3>🧠 200+ modelos via OpenRouter</h3><p>Uma única API key dá acesso a Claude, GPT, Gemini, Llama, DeepSeek e outros. Troca de modelo padrão é só editar o `.env` e reiniciar.</p></div>
+    <div class="card"><h3>🧠 200+ modelos via OpenRouter</h3><p>Uma única API key dá acesso a Claude, GPT, Gemini, Llama, DeepSeek e outros. Troca de modelo padrêo é só editar o `.env` e reiniciar.</p></div>
   </div>
 </div></section>
 
 <section id="fluxo"><div class="wrap">
   <span class="chip">Como funciona</span>
   <h2>Do `.env` ao gateway rodando</h2>
-  <p class="sub">O `entrypoint.sh` faz a configuração inteira sozinho na primeira execução — você só precisa preencher as variáveis de ambiente.</p>
+  <p class="sub">O `entrypoint.sh` faz a configuraçêo inteira sozinho na primeira execuçêo — você só precisa preencher as variáveis de ambiente.</p>
   <div class="flow">
     <span>.env preenchido</span><span class="arr">→</span>
     <span>docker compose up -d</span><span class="arr">→</span>
@@ -151,7 +151,7 @@
     <span>gateway sobe na porta 18789</span>
   </div>
   <div class="grid g3" style="margin-top:28px">
-    <div class="card"><h3>🐳 Container</h3><p>Imagem `node:22-slim`, instala `clawdbot` (runtime atual, em transição pro pacote `moltbot`), roda como usuário não-root `moltbot`.</p></div>
+    <div class="card"><h3>🐳 Container</h3><p>Imagem `node:22-slim`, instala `clawdbot` (runtime atual, em transiçêo pro pacote `moltbot`), roda como usuário nêo-root `moltbot`.</p></div>
     <div class="card"><h3>⚙️ entrypoint.sh</h3><p>Gera `~/.clawdbot/clawdbot.json` a partir do template, injeta API keys e tokens via Node.js, define bind `lan` (exigência do Docker) e aplica `chmod 600` no config.</p></div>
     <div class="card"><h3>🌐 Rede</h3><p>Dentro do container o gateway escuta em `0.0.0.0:18789`; o `docker-compose.yml` restringe o acesso do host a `127.0.0.1:18789` — só a própria máquina alcança.</p></div>
   </div>
@@ -174,7 +174,7 @@
 <section id="guia"><div class="wrap">
   <span class="chip">Guia de uso · passo a passo</span>
   <h2>Do clone ao webchat respondendo</h2>
-  <p class="sub">Os comandos abaixo são os mesmos do README do projeto, na ordem em que devem rodar.</p>
+  <p class="sub">Os comandos abaixo sêo os mesmos do README do projeto, na ordem em que devem rodar.</p>
 
   <div class="step"><div class="b">1</div><div>
     <h3>Clone o repo</h3>
@@ -185,7 +185,7 @@ cd docker-moltbot</span></pre>
 
   <div class="step"><div class="b">2</div><div>
     <h3>Configure o `.env`</h3>
-    <p>Copie o exemplo e preencha com valores reais — os placeholders não funcionam.</p>
+    <p>Copie o exemplo e preencha com valores reais — os placeholders nêo funcionam.</p>
 <pre><span class="k">cp .env.example .env
 nano .env</span>  <span class="c"># preencha GATEWAY_AUTH_TOKEN e OPENROUTER_API_KEY</span></pre>
   </div></div>
@@ -198,14 +198,14 @@ nano .env</span>  <span class="c"># preencha GATEWAY_AUTH_TOKEN e OPENROUTER_API
 
   <div class="step"><div class="b">4</div><div>
     <h3>Configure sua chave OpenRouter</h3>
-    <p>Crie a key em <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>, cole em `OPENROUTER_API_KEY` no `.env` e escolha o modelo padrão.</p>
+    <p>Crie a key em <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>, cole em `OPENROUTER_API_KEY` no `.env` e escolha o modelo padrêo.</p>
 <pre><span class="c"># .env</span>
 <span class="k">OPENROUTER_API_KEY=sk-or-v1-...
 DEFAULT_MODEL=anthropic/claude-sonnet-4-5</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
-    <h3>Build e execução</h3>
+    <h3>Build e execuçêo</h3>
     <p>A primeira vez leva alguns minutos (baixa Node.js, ffmpeg, Python); depois disso sobe na hora.</p>
 <pre><span class="k">docker compose up -d</span></pre>
   </div></div>
@@ -225,9 +225,9 @@ DEFAULT_MODEL=anthropic/claude-sonnet-4-5</span></pre>
 
   <div class="step"><div class="b">8</div><div>
     <h3>Diagnóstico e auditoria de segurança</h3>
-    <p>Comandos úteis pra manutenção do dia a dia.</p>
+    <p>Comandos úteis pra manutençêo do dia a dia.</p>
 <pre><span class="k">docker compose exec moltbot moltbot doctor --fix</span>   <span class="c"># corrige config automaticamente</span>
-<span class="k">docker compose exec moltbot moltbot security audit</span> <span class="c"># audita a configuração de segurança</span></pre>
+<span class="k">docker compose exec moltbot moltbot security audit</span> <span class="c"># audita a configuraçêo de segurança</span></pre>
   </div></div>
 
   <div class="step"><div class="b">9</div><div>
@@ -249,7 +249,7 @@ DEFAULT_MODEL=anthropic/claude-sonnet-4-5</span></pre>
 <section id="roadmap"><div class="wrap">
   <span class="chip">Roadmap</span>
   <h2>Rumo ao Moltbot completo</h2>
-  <p class="sub">O repo já roda em produção, mas segue a transição de nome do próprio projeto upstream.</p>
+  <p class="sub">O repo já roda em produçêo, mas segue a transiçêo de nome do próprio projeto upstream.</p>
   <div class="phase"><div class="tag">Hoje</div><div class="d"><strong>Runtime Clawdbot</strong><span>Instala o pacote `clawdbot` (runtime completo) e usa `~/.clawdbot` como diretório de config — CLI ainda responde por `clawdbot` e `moltbot` de forma intercambiável.</span></div></div>
   <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Rebrand pra Moltbot</strong><span>Quando o pacote npm `moltbot` for totalmente publicado, basta trocar `npm install -g moltbot` no Dockerfile e o CMD pra `moltbot gateway run` — os volumes migram sozinhos (fallback pra `~/.clawdbot`).</span></div></div>
   <div class="phase"><div class="tag">Contínuo</div><div class="d"><strong>Hardening adicional</strong><span>AppArmor, `cap_drop: [ALL]` e isolamento de rede (`internal: true`) ficam disponíveis pra quem quiser endurecer ainda mais — documentados no SECURITY.md.</span></div></div>

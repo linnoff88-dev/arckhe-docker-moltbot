@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script para verificar e corrigir configuração OpenRouter
+# Script para verificar e corrigir configuraçêo OpenRouter
 
 echo "=== Removendo volumes antigos (pode conter config de Anthropic) ==="
 docker compose down -v
@@ -13,15 +13,15 @@ echo "=== Iniciando container com OpenRouter ==="
 docker compose up -d
 
 echo ""
-echo "=== Aguardando 10 segundos para inicialização ==="
+echo "=== Aguardando 10 segundos para inicializaçêo ==="
 sleep 10
 
 echo ""
-echo "=== Verificando configuração gerada ==="
+echo "=== Verificando configuraçêo gerada ==="
 docker compose exec moltbot cat ~/.clawdbot/clawdbot.json | grep -A 5 '"auth"'
 
 echo ""
-echo "=== Verificando logs de inicialização ==="
+echo "=== Verificando logs de inicializaçêo ==="
 docker compose logs --tail 30
 
 echo ""
